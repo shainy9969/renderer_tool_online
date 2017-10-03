@@ -11,8 +11,8 @@
 	<script>
 		var main = function () {
 			var scene = new THREE.Scene();
-			var width  = 512;
-			var height = 1024;
+			var width  = window.screen.innerWidth;
+			var height = window.screen.innerHeight;
 			var fov    = 60;
 			var aspect = width / height;
 			var near   = 1;
