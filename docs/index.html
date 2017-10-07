@@ -36,7 +36,14 @@
 				controls.update();
 				renderer.render(scene, camera);
 			})();
-			window.onresize=main;
+			window.onresize=function(){
+				width  = window.screen.width;
+				height = window.screen.height;
+				aspect = width / height;
+				camera.aspect = aspect;
+				camera.updateProjectionMatrix();
+				renderer.render(scene, camera);
+			};
 		};
 		window.addEventListener( 'DOMContentLoaded', main, false );
 	</script>
