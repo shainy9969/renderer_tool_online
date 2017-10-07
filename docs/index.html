@@ -42,6 +42,7 @@
 				aspect = width / height;
 				camera.aspect = aspect;
 				camera.updateProjectionMatrix();
+				renderer.setSize(width,height);
 				renderer.render(scene, camera);
 			};
 		};
