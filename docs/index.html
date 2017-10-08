@@ -3,10 +3,9 @@
 	<title>Renderer Tool Online</title>
 	<body>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 	<script src="three.min.js"></script>
 	<script src="https://rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script>
-		<script id="myJson" type="application/json" src="geometry.json"></script>
+	<script src="geometry.js"></script>
 	<script>
 		var loadGeometryFromJSON=function(scene,x,y,z,json,skin){
 			for(let b=0;b<json.bones.length;b++){
@@ -60,7 +59,7 @@
 			lLeg.position.set(0+2,0+6,-2+2);
 			scene.add(lLeg);
 			*/
-			loadGeometryFromJSON(scene,0,-12,0,JSON.parse($('#geometry').html()));
+			loadGeometryFromJSON(scene,0,-12,0,JSON.parse(geometry_json));
 			renderer.render( scene, camera );
 			var controls = new THREE.OrbitControls( camera );
 			(function renderLoop() {
