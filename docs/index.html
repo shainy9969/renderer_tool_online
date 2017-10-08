@@ -8,7 +8,9 @@
 	<script src="geometry.js"></script>
 	<script>
 		var loadGeometryFromJSON=function(scene,x,y,z,json,skin){
+			if("bones" in json)
 			for(let b=0;b<json.bones.length;b++){
+				if("cubes" in json.bones[b])
 				for(let c=0;c<json.bones[b].cubes.length;c++){
 					let geometry=new THREE.CubeGeometry(json.bones[b].cubes[c].size[0],json.bones[b].cubes[c].size[1],json.bones[b].cubes[c].size[2]);
 					let mesh=new THREE.Mesh(geometry,new THREE.MeshPhongMaterial({color:0xffffff}));
