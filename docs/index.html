@@ -59,7 +59,7 @@
 			lLeg.position.set(0+2,0+6,-2+2);
 			scene.add(lLeg);
 			*/
-			loadGeometryFromJSON(scene,0,-12,0,JSON.parse(geometry_json));
+			loadGeometryFromJSON(scene,0,-12,0,geometry_json);
 			renderer.render( scene, camera );
 			var controls = new THREE.OrbitControls( camera );
 			(function renderLoop() {
