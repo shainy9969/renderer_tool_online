@@ -8,6 +8,7 @@
 	<script src="geometry.js"></script>
 	<script>
 		var loadGeometryFromJSON=function(scene,x,y,z,json,skin){
+			if(!("bones" in json))alert("!");
 			if("bones" in json)
 			for(let b=0;b<json.bones.length;b++){
 				if("cubes" in json.bones[b])
