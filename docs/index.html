@@ -63,7 +63,15 @@
 			lLeg.position.set(0+2,0+6,-2+2);
 			scene.add(lLeg);
 			*/
-			loadGeometryFromJSON(scene,0,-12,0,geometry_json);
+			//loadGeometryFromJSON(scene,0,-12,0,geometry_json);
+			var urlParam=location.search.substring(1);
+			if(urlParam){
+				var params=urlParam.split("&");
+				for(let p=0;p<params.length;p++){
+					var param=params[p].split("=");
+					if(param[0]=="geometry")loadGeometryFromJSON(scene,0,-12,0,JSON.parse(param[1]));
+				}
+			}
 			renderer.render( scene, camera );
 			var controls = new THREE.OrbitControls( camera );
 			(function renderLoop() {
